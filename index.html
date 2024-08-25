@@ -51,6 +51,17 @@
         button:hover {
             background-color: #45a049;
         }
+        .termo-ciencia-container {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-height: 150px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+        .termo-ciencia-container h3 {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -128,11 +139,26 @@
             <input type="tel" id="telefone_familiar" name="telefone_familiar">
         </div>
 
-        <!-- Termos de Ciência -->
+        <!-- Termo de Ciência -->
         <h2>Termos de Ciência</h2>
+        <div class="termo-ciencia-container">
+            <h3>Termo de Ciência sobre a Coleta de Dados</h3>
+            <p>
+                Ao fornecer meus dados pessoais através deste formulário, declaro estar ciente e de acordo com a coleta, armazenamento e uso das informações por mim fornecidas, exclusivamente para a confecção de contratos de locação de imóveis.
+            </p>
+            <p>
+                Compreendo que os dados coletados, incluindo nome, sobrenome, CPF, RG, data de nascimento, idade, e-mail, telefone, e quaisquer outras informações pessoais fornecidas, serão utilizados apenas para fins contratuais e que não serão compartilhados com terceiros, exceto quando exigido por lei ou necessário para o cumprimento das obrigações contratuais.
+            </p>
+            <p>
+                Estou ciente de que os dados fornecidos serão mantidos em segurança e serão tratados de acordo com as normas vigentes de proteção de dados pessoais, sendo usados exclusivamente para os fins acima mencionados.
+            </p>
+            <p>
+                Ao assinar este termo, concordo com os termos estabelecidos e autorizo o uso dos meus dados pessoais conforme descrito.
+            </p>
+        </div>
         <div class="checkbox-group">
             <input type="checkbox" id="termo_contrato" name="termo_contrato" required>
-            <label for="termo_contrato">Concordo que os dados fornecidos serão usados única e exclusivamente para confecção de contratos de locação dos imóveis.</label>
+            <label for="termo_contrato">Concordo com o Termo de Ciência sobre a Coleta de Dados.</label>
         </div>
         <div class="checkbox-group">
             <input type="checkbox" id="termo_servicos" name="termo_servicos" required>
@@ -150,4 +176,3 @@
 
 </body>
 </html>
-

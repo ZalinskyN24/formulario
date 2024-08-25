@@ -1,37 +1,28 @@
-document.getElementById('cadastroForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+import { createClient } from '@supabase/supabase-js'
+
+// Inicialize o cliente do Supabase
+const supabaseUrl = 'https://gnzljxbmqmxtkrwkjhni.supabase.co'
+const supabaseKey = 'OVHBKoVFlFKwUzywnmt4wervrwJJNmZ4EdcGUIrRrDY' // Sua chave pública
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+// Adiciona um ouvinte de evento para o formulário
+document.getElementById('cadastroForm').addEventListener('submit', async function(event) {
+    event.preventDefault()
 
     // Coleta os dados do formulário
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
+    const formData = new FormData(this)
+    const data = Object.fromEntries(formData.entries())
 
-    // Configura o pedido de envio para o Supabase
-    fetch('https://gnzljxbmqmxtkrwkjhni.supabase.co/rest/v1/cadastro', { // Substitua 'seu_endpoint' pelo nome da tabela ou endpoint correto
-        method: 'POST',
-        headers: {
-            'Authorization': 'Bearer OVHBKoVFlFKwUzywnmt4wervrwJJNmZ4EdcGUIrRrDY', // Use a chave pública fornecida
-            'Content-Type': 'application/json',
-            'apikey': 'OVHBKoVFlFKwUzywnmt4wervrwJJNmZ4EdcGUIrRrDY', // Use a chave pública fornecida
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => {
-        if (response.status === 405) {
-            throw new Error('Método não permitido para este endpoint.');
-        }
-        if (!response.ok) {
-            return response.json().then(error => {
-                throw new Error(`Erro: ${error.message}`);
-            });
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Success:', data);
-        alert('Dados enviados com sucesso!');
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('Erro ao enviar os dados: ' + error.message);
-    });
-});
+    // Envia os dados para o Supabase
+    const { data: response, error } = await supabase
+        .from('sua_tabela') // Substitua 'sua_tabela' pelo nome da sua tabela
+        .insert([data])
+
+    if (error) {
+        console.error('Erro ao enviar dados:', error)
+        alert('Erro ao enviar os dados.')
+    } else {
+        console.log('Dados enviados com sucesso:', response)
+        alert('Dados enviados com sucesso!')
+    }
+})

@@ -10,7 +10,8 @@
 
 <div class="container">
     <h2>Formulário de Cadastro</h2>
-    <form id="cadastroForm">
+    <form action="#" method="post">
+
         <!-- Informações do Usuário -->
         <div class="form-group">
             <label for="nome">Nome:</label>
@@ -80,7 +81,7 @@
             <input type="tel" id="telefone_familiar" name="telefone_familiar">
         </div>
 
-        <!-- Termos de Ciência -->
+        <!-- Termo de Ciência -->
         <h2>Termos de Ciência</h2>
         <div class="termo-ciencia-container">
             <h3>Termo de Ciência sobre a Coleta de Dados</h3>
@@ -96,26 +97,61 @@
             <p>
                 Ao assinar este termo, concordo com os termos estabelecidos e autorizo o uso dos meus dados pessoais conforme descrito.
             </p>
+            <div class="checkbox-group">
+                <input type="checkbox" id="termo_contrato" name="termo_contrato" required>
+                <label for="termo_contrato">Concordo com o Termo de Ciência sobre a Coleta de Dados.</label>
+            </div>
         </div>
-        <div class="checkbox-group">
-            <input type="checkbox" id="termo_contrato" name="termo_contrato" required>
-            <label for="termo_contrato">Concordo com o Termo de Ciência sobre a Coleta de Dados.</label>
+        <div class="termo-ciencia-container">
+            <h3>Termo de Ciência sobre o Uso de Serviços</h3>
+            <p>
+                Declaro estar ciente e de acordo com as condições estabelecidas para o uso dos serviços de água, internet e luz fornecidos no imóvel alugado.
+            </p>
+            <p>
+                Entendo que:
+            </p>
+            <ul>
+                <li><strong>Água:</strong> O consumo de água deverá ser feito de forma consciente e responsável. Qualquer desperdício poderá resultar em cobranças adicionais, conforme estipulado no contrato de locação.</li>
+                <li><strong>Internet:</strong> A conexão de internet oferecida deverá ser utilizada de acordo com as normas e limitações estabelecidas pelo provedor de serviços. O locatário será responsável por qualquer uso indevido ou atividades ilegais realizadas através dessa conexão.</li>
+                <li><strong>Luz:</strong> O consumo de energia elétrica deve seguir as boas práticas de economia e sustentabilidade. Equipamentos de alto consumo devem ser utilizados de maneira criteriosa, e o locatário será responsável por pagar pelo consumo registrado.</li>
+            </ul>
+            <p>
+                Compreendo que o descumprimento de qualquer uma das condições acima pode resultar em penalidades, conforme estipulado no contrato de locação.
+            </p>
+            <p>
+                Ao assinar este termo, concordo com os termos estabelecidos e comprometo-me a seguir as diretrizes para o uso dos serviços de água, internet e luz no imóvel alugado.
+            </p>
+            <div class="checkbox-group">
+                <input type="checkbox" id="termo_servicos" name="termo_servicos" required>
+                <label for="termo_servicos">Concordo com os termos de ciência sobre o uso de serviços como água, internet e luz.</label>
+            </div>
         </div>
-        <div class="checkbox-group">
-            <input type="checkbox" id="termo_servicos" name="termo_servicos" required>
-            <label for="termo_servicos">Concordo com os termos de ciência sobre o uso de serviços como água, internet e luz.</label>
-        </div>
-        <div class="checkbox-group">
-            <input type="checkbox" id="termo_convivencia" name="termo_convivencia" required>
-            <label for="termo_convivencia">Concordo com os termos de ciência sobre as regras de boa convivência.</label>
+        <div class="termo-ciencia-container">
+            <h3>Termo de Ciência sobre as Regras de Boa Convivência</h3>
+            <p>
+                Declaro estar ciente e de acordo com as regras de boa convivência estabelecidas para o imóvel alugado, que incluem:
+            </p>
+            <ul>
+                <li><strong>Uso das Áreas Comuns:</strong> Devo respeitar as regras para o uso das áreas comuns do imóvel, como salão de festas, piscina e áreas de lazer, conforme estabelecido pelo condomínio ou pelo contrato de locação.</li>
+                <li><strong>Ruídos:</strong> Devo manter o nível de ruído baixo, especialmente durante horários de descanso, para não incomodar os demais moradores.</li>
+                <li><strong>Manutenção:</strong> Devo zelar pela conservação do imóvel e das áreas comuns, evitando danos e realizando reparos necessários.</li>
+            </ul>
+            <p>
+                Entendo que o descumprimento das regras de boa convivência pode resultar em advertências ou penalidades, conforme estabelecido no contrato de locação.
+            </p>
+            <p>
+                Ao assinar este termo, concordo com as regras de boa convivência e comprometo-me a segui-las durante o período de locação.
+            </p>
+            <div class="checkbox-group">
+                <input type="checkbox" id="termo_convivencia" name="termo_convivencia" required>
+                <label for="termo_convivencia">Concordo com os termos de ciência sobre as regras de boa convivência.</label>
+            </div>
         </div>
 
         <!-- Botão de Envio -->
         <button type="submit">Enviar</button>
     </form>
 </div>
-
-<script src="script.js"></script>
 
 </body>
 </html>
